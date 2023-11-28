@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { GRID_ARRAY } from "../utilites/constantVariables";
 import { Box, Card, CardMedia } from "@mui/material";
+import PropTypes from "prop-types";
+import React from "react";
+import { GRID_ARRAY } from "../utilites/constantVariables";
 
 const RobotGrid = ({ robotPosition, teleportRobot, robotImage }) => {
   return (
@@ -16,7 +16,7 @@ const RobotGrid = ({ robotPosition, teleportRobot, robotImage }) => {
       {GRID_ARRAY.map((_, rowIndex) =>
         GRID_ARRAY.map((_, colIndex) => (
           <Card
-            sx={{ height: "15vh" }}
+            sx={{ height: "15vh", cursor: "pointer" }}
             key={`${rowIndex}${colIndex}`}
             onClick={() => teleportRobot(colIndex + 1, rowIndex + 1)}>
             {robotPosition.x === colIndex + 1 &&

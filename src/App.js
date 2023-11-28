@@ -92,7 +92,10 @@ const App = (props) => {
               robotImage={robotImage}
             />
 
-            <DesktopNavigation handleMove={handleMove} />
+            <DesktopNavigation
+              handleMove={handleMove}
+              robotPosition={robotPosition}
+            />
           </Box>
         </Container>
 
