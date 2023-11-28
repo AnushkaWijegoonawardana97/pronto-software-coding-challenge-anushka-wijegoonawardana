@@ -29,6 +29,12 @@ const Main = styled("div")(({ theme }) => ({
   },
 }));
 
+/**
+ * App component is the main entry point of the application, rendering the robot grid and navigation.
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @returns {JSX.Element} - Rendered App component.
+ */
 const App = (props) => {
   const [robotPosition, setRobotPosition] = useState({ x: 1, y: 1 });
   const [robotImage, setRobotImage] = useState("");
@@ -87,6 +93,7 @@ const App = (props) => {
     <StyledRoot>
       <Main>
         <Container maxWidth='xl'>
+          {/* Grid layout with RobotGrid and DesktopNavigation components */}
           <Box
             rowGap={3}
             columnGap={3}
@@ -108,6 +115,7 @@ const App = (props) => {
           </Box>
         </Container>
 
+        {/* MobileNavigation component for small screens */}
         <MobileNavigation
           handleMove={handleMove}
           robotPosition={robotPosition}

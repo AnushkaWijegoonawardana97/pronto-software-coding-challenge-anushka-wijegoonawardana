@@ -3,14 +3,17 @@ import { alpha } from "@mui/material";
 //
 import colorPalette from "./colorPalette";
 
-// ----------------------------------------------------------------------
-
+// Get the base color from the colorPalette
 const color = colorPalette.grey[500];
 
+// Function to generate shadow styles based on transparency
 export default function shadows() {
+  // Calculate different levels of transparency
   const transparent1 = alpha(color, 0.2);
   const transparent2 = alpha(color, 0.14);
   const transparent3 = alpha(color, 0.12);
+
+  // Return an array of shadow styles for various depths
   return [
     "none",
     `0px 2px 1px -1px ${transparent1},0px 1px 1px 0px ${transparent2},0px 1px 3px 0px ${transparent3}`,

@@ -1,10 +1,15 @@
 import { alpha } from "@mui/material";
 import colorPalette from "./colorPalette";
 
+// Extract the grey color from the color palette
 const color = colorPalette.grey[500];
 
+// Function to generate custom shadows based on the provided color
 const customShadows = (props) => {
+  // Calculate a transparent color based on the extracted grey color
   const transparent = alpha(color, 0.16);
+
+  // Define custom shadows with varying levels and colors
   return {
     z1: `0 1px 2px 0 ${transparent}`,
     z4: `0 4px 8px 0 ${transparent}`,
@@ -33,6 +38,8 @@ const customShadows = (props) => {
   };
 };
 
+// Define PropTypes for the customShadows function
 customShadows.propTypes = {};
 
+// Export the customShadows function
 export default customShadows;

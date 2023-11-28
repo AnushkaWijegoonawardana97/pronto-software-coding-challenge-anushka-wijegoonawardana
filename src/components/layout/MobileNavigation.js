@@ -1,4 +1,10 @@
 import {
+  ArrowCircleDown,
+  ArrowCircleLeft,
+  ArrowCircleRight,
+  ArrowCircleUp,
+} from "@mui/icons-material";
+import {
   AppBar,
   IconButton,
   Stack,
@@ -10,13 +16,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { bgBlur } from "../../utilites/cssStyles";
 
-import {
-  ArrowCircleDown,
-  ArrowCircleLeft,
-  ArrowCircleRight,
-  ArrowCircleUp,
-} from "@mui/icons-material";
-
+// Styling the root AppBar with background blur effect
 const StyledRoot = styled(AppBar)(({ theme }) => ({
   ...bgBlur({ color: theme.palette.background.neutral }),
   boxShadow: "none",
@@ -28,13 +28,30 @@ const StyledRoot = styled(AppBar)(({ theme }) => ({
   },
 }));
 
+// Styling the Toolbar within the AppBar, providing padding on larger screens
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   [theme.breakpoints.up("lg")]: {
     padding: theme.spacing(0, 5),
   },
 }));
 
+/**
+ * MobileNavigation component provides navigation buttons for moving the robot in a grid.
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @param {Function} props.handleMove - Function to handle robot movement.
+ * @param {Object} props.robotPosition - The current position of the robot.
+ * @returns {JSX.Element} - Rendered MobileNavigation component.
+ */
 const MobileNavigation = ({ handleMove, robotPosition }) => {
+  /**
+   * StyledIconButton function generates a styled navigation button based on direction.
+   *
+   * @param {string} title - The title for the tooltip.
+   * @param {string} direction - The direction of the movement (Left, Up, Down, Right).
+   * @param {boolean} disabled - Whether the button is disabled.
+   * @returns {JSX.Element} - Styled navigation button with a tooltip.
+   */
   const StyledIconButton = (title, direction, disabled) => (
     <Tooltip title={`Move ${title}`}>
       <IconButton
@@ -63,6 +80,7 @@ const MobileNavigation = ({ handleMove, robotPosition }) => {
           alignItems='center'
           justifyContent='space-around'
           sx={{ flexGrow: 1 }}>
+          {/* Navigation buttons for moving the robot */}
           {StyledIconButton("Left", "Left", robotPosition.x === 1)}
           {StyledIconButton("Up", "Up", robotPosition.y === 1)}
           {StyledIconButton("Down", "Down", robotPosition.y === 5)}
@@ -73,6 +91,7 @@ const MobileNavigation = ({ handleMove, robotPosition }) => {
   );
 };
 
+// PropTypes for type-checking and documentation
 MobileNavigation.propTypes = {
   handleMove: PropTypes.func.isRequired,
   robotPosition: PropTypes.object.isRequired,

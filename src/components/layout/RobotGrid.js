@@ -1,13 +1,13 @@
 import { Box, Card, CardMedia } from "@mui/material";
 import PropTypes from "prop-types";
 import React from "react";
-import { GRID_ARRAY } from "../../utilites/constantVariables";
-
 /**
  * RobotGrid component displays a grid of cards representing positions on a grid.
  * Each card can be clicked to teleport the robot to that position.
  */
 const RobotGrid = ({ robotPosition, teleportRobot, robotImage }) => {
+  const GRID_ARRAY = [1, 2, 3, 4, 5];
+
   return (
     <Box
       rowGap={{ xs: 1, sm: 3 }}
