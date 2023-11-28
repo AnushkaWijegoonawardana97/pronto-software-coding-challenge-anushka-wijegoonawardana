@@ -1,13 +1,13 @@
-import { Box, Button, Card, Container, styled } from "@mui/material";
+import { Box, Container, styled } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import {
   BackgroundSets,
   CharacterSets,
   generateAvatar,
 } from "robohash-avatars";
+import DesktopNavigation from "./components/DesktopNavigation";
 import MobileNavigation from "./components/MobileNavigation";
 import RobotGrid from "./components/RobotGrid";
-import DesktopNavigation from "./components/DesktopNavigation";
 
 const StyledRoot = styled("div")({
   display: "flex",
