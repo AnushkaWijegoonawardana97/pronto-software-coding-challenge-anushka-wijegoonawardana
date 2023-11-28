@@ -7,6 +7,7 @@ import {
 } from "robohash-avatars";
 import MobileNavigation from "./components/MobileNavigation";
 import RobotGrid from "./components/RobotGrid";
+import DesktopNavigation from "./components/DesktopNavigation";
 
 const StyledRoot = styled("div")({
   display: "flex",
@@ -91,26 +92,7 @@ const App = (props) => {
               robotImage={robotImage}
             />
 
-            <Card
-              sx={{
-                p: 3,
-                display: { xs: "none", sm: "flex" },
-                alignItems: "center",
-                justifyContent: "center",
-              }}>
-              <Box
-                rowGap={1}
-                columnGap={1}
-                display='grid'
-                gridTemplateColumns={{
-                  xs: "repeat3, 1fr)",
-                  sm: "repeat(3, 1fr)",
-                }}></Box>
-              <Button onClick={() => handleMove("Up")}>Move North</Button>
-              <Button onClick={() => handleMove("Right")}>Move East</Button>
-              <Button onClick={() => handleMove("Down")}>Move South</Button>
-              <Button onClick={() => handleMove("Left")}>Move West</Button>
-            </Card>
+            <DesktopNavigation handleMove={handleMove} />
           </Box>
         </Container>
 
