@@ -53,7 +53,7 @@ const MobileNavigation = ({ handleMove, robotPosition }) => {
    * @returns {JSX.Element} - Styled navigation button with a tooltip.
    */
   const StyledIconButton = (title, direction, disabled) => (
-    <Tooltip title={`Move ${title}`}>
+    <Tooltip title={`Move ${title}`} data-testid={`Move ${title}`}>
       <IconButton
         color='primary'
         size='large'

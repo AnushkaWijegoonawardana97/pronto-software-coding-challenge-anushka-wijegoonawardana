@@ -20,6 +20,7 @@ const RobotGrid = ({ robotPosition, teleportRobot, robotImage }) => {
       {GRID_ARRAY.map((_, rowIndex) =>
         GRID_ARRAY.map((_, colIndex) => (
           <Card
+            data-testid='robotGridCard'
             sx={{ height: "15vh", cursor: "pointer" }}
             key={`${rowIndex}${colIndex}`}
             onClick={() => teleportRobot(colIndex + 1, rowIndex + 1)}>
